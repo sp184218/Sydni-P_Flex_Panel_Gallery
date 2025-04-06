@@ -9,6 +9,8 @@
 </head>
 <body style="margin:0; background:#ffc600; font-family:'helvetica neue'; font-size:20px; font-weight:200;">
   <input type="checkbox" id="modalToggle" checked>
+<label for="modalToggle" class="modal-trigger"></label>  <!-- Add a label to toggle the modal -->
+
 
   <!-- Welcome Modal -->
   <div id="welcomeModal">
@@ -84,6 +86,21 @@
   z-index: 0; /* Adjust as needed */
   display: none;
 }
+#modalToggle {
+  display: none;
+}
+
+.modal-trigger {
+  display: block;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  cursor: pointer;
+}
+
 
   
     html, *, *::before, *::after {
