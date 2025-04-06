@@ -2,46 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flex Panels 💪</title>
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <title>Flex Panels 🎥</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" type="text/css">
   <link rel="icon" href="https://fav.farm/✅" />
+  <script async data-id="five-server" data-file="c:\Users\sp184\OneDrive\Desktop\Sydni-P_Flex_Panel_Gallery\index.html" type="application/javascript" src="/fiveserver.js"></script>
 </head>
-<body>
+<body style="margin:0; background:#ffc600; font-family:'helvetica neue'; font-size:20px; font-weight:200;">
+  <input type="checkbox" id="modalToggle" checked>
+
+  <!-- Welcome Modal -->
+  <div id="welcomeModal">
+    <video autoplay loop muted playsinline class="modal-video" id="bgVideo">
+      <source src="https://dl.dropboxusercontent.com/scl/fi/28vps65s3fhtpcickeu6d/syd-da-kid.mp4?rlkey=v6n18l07zkvr79sqr4quy50fb&st=tvu9gcfw&dl=0" type="video/mp4">
+    </video>
+  
+    <!-- Image to show on hover/click -->
+    <img src="Yoruichi.jpg" alt="Hover Image" class="hover-image" id="hoverImage">
+  
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <p class="welcome-text">
+        Sydematic & Her Alter-Ego Yoruichi WELCOME You to a UNI-VERSE FULL of Stories and Self-Discovery.
+        <br/>LET THE JOURNEY BEGIN!!!!
+      </p>
+    </div>
+  </div>
+  
+
   <style>
-    html {
+  
+  #welcomeModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    font-size: 22px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Adjust as needed */
+  display: none;
+}
+
+  
+    html, *, *::before, *::after {
       box-sizing: border-box;
-      background: #ffc600;
-      font-family: 'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
     }
 
-    body {
-      margin: 0;
-    }
-
-    *, *:before, *:after {
-      box-sizing: inherit;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
     }
 
     .panels {
+      display: flex;
       min-height: 100vh;
       overflow: hidden;
-      display: flex;
     }
 
     .panel {
-      background: #6B0F9C;
+      background-image: url("cinema.jpg"); 
       box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color: white;
       text-align: center;
       align-items: center;
-      /* Safari transitionend event.propertyName === flex */
-      /* Chrome + FF transitionend event.propertyName === flex-grow */
-      transition:
-        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-        background 0.2s;
+      transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), 
+                  flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), 
+                  background 0.2s, transform 0.3s ease, box-shadow 0.3s ease;
       font-size: 20px;
       background-size: cover;
       background-position: center;
@@ -51,13 +119,148 @@
       flex-direction: column;
     }
 
-    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+    .panel1 {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
 
-    /* Flex Items */
+.panel1 .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.panel1 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    .panel2 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel2 video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .panel3 {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.panel3 .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.panel3 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    .panel4 { 
+      
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .panel4 .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .panel4 video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .panel5  {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.panel5 .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.panel5 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    .panel6 { 
+  background-image: url(https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+    .panel7 { 
+  background-image: url('https://dl.dropboxusercontent.com/scl/fi/6yqyrme94q2z3nln0mdm8/Sometimes-just-being-still.jpg?rlkey=f7jol689b6lhmjdohixrih77d&st=9wz1h2g6&dl=0'); 
+  background-size: cover; 
+  background-position: center; 
+}
+    .panel8 {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.panel8 .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.panel8 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    .panel9 { 
+  background-image: url('https://dl.dropboxusercontent.com/scl/fi/1ggktibdux5thrkbz365n/omit.jpg?rlkey=i9vrqkwd7aldlxgzf7an9ut0g&st=unl5mo2l&dl=0'); 
+  background-size: cover; 
+  background-position: center; 
+}
+    .panel10  { 
+  background-image: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2050&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+
+
     .panel > * {
       margin: 0;
       width: 100%;
@@ -94,34 +297,106 @@
         font-size: 1em;
       }
     }
+
+    /* Pop-up and light-up effect styles */
+    .panel.light-up {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    .panel.pop-up {
+      transform: scale(1.1);
+    }
+
+    .panel.open-active {
+      transform: scale(1);
+    }
   </style>
 
+  <div class="wrapper">
+    <!-- First row -->
+    <div class="panels">
+      <div class="panel panel1">
+        <div class="video-bg">
+          <video muted plays>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/docl80iaa6i5rqtn1vq9e/ATLA.mp4?rlkey=d35gzkzjdiestto0xe40rfm24&st=p2l87ku3&dl=0" type="video/mp4">
+          </video>
+        </div>      
+        <p>Shine</p>
+        <p>Let's</p>
+        <p>Grow</p>
+      </div>
+      <div class="panel panel2">
+        <video id="myVideo" autoplay loop>
+          <source src="film move.mp4" 
+          type="video/mp4">
+        </video>        
+        <p>Feel</p>
+        <p>Embrace</p>
+        <p>Love</p>
+      </div>
+      <div class="panel panel3">
+        <div class="video-bg">
+          <video autoplay loop muted>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/28vps65s3fhtpcickeu6d/syd-da-kid.mp4?rlkey=v6n18l07zkvr79sqr4quy50fb&st=cjshqcrd&dl=0" type="video/mp4">
+          </video>
+        </div>      
+        <p>Beautiful</p>
+      </div>
+      <div class="panel panel4">
+        <div class="video-bg">
+          <video autoplay muted loop>
+            <source src="film move.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p>Appreciate</p>
+        <p>Stories</p>
+        <p>Always</p>
+      </div>
+      <div class="panel panel5">
+        <div class="video-bg">
+          <video autoplay loop muted>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/i29lzp0pz8zhxqgg2crss/Inception.mp4?rlkey=2059sx72gxqd82j3eo86p08rk&st=cav9d9vk&dl=0" type="video/mp4">
+          </video>
+        </div>      
+        <p>Stand</p>
+        <p>Together</p>
+        <p>Effortlessly</p>
+      </div>
+    </div>
 
-  <div class="panels">
-    <div class="panel panel1">
-      <p>Hey</p>
-      <p>Let's</p>
-      <p>Dance</p>
-    </div>
-    <div class="panel panel2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
-    </div>
-    <div class="panel panel3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
-    </div>
-    <div class="panel panel4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You can</p>
-    </div>
-    <div class="panel panel5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
+    <!-- Second row -->
+    <div class="panels">
+      <div class="panel panel6">
+        <p>Nature</p>
+        <p>Is</p>
+        <p>Healing</p>
+      </div>
+      <div class="panel panel7">
+        <p>Invite</p>
+        <p>Change</p>
+        <p>Freely</p>
+      </div>
+      <div class="panel panel8">
+        <div class="video-bg">
+          <video autoplay loop muted>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/1vdmw0ua8mgvpl5purak7/Everything-Everywhere-All-at-Once.mp4?rlkey=ug3hhksq8lvo1apaagsfjm668&st=1t3xt96i&dl=0" type="video/mp4">
+          </video>
+        </div>
+      
+        <p>Redefine</p>
+        <p>Worth</p>
+        <p>Constantly</p>
+      </div>
+      <div class="panel panel9">
+        <p>Trust</p>
+        <p>The</p>
+        <p>Process</p>
+      </div>
+      <div class="panel panel10">
+        <p>Face</p>
+        <p>Risk</p>
+        <p>Fearlessly</p>
+      </div>
     </div>
   </div>
 
@@ -129,12 +404,17 @@
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen() {
-      console.log('Hello');
       this.classList.toggle('open');
+      this.classList.add('pop-up');
+      this.classList.add('light-up');
+
+      setTimeout(() => {
+        this.classList.remove('pop-up');
+        this.classList.remove('light-up');
+      }, 500);
     }
 
     function toggleActive(e) {
-      console.log(e.propertyName);
       if (e.propertyName.includes('flex')) {
         this.classList.toggle('open-active');
       }
@@ -143,6 +423,8 @@
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
+  <script src="film.js"></script>
 
+  
 </body>
 </html>
